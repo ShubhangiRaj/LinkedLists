@@ -45,6 +45,10 @@ class LinkedList{
         }
     }
 
+    deleteList() {
+        this.head = null;
+    }
+
     // reverse
     reverse() {
 
