@@ -30,6 +30,7 @@ class LinkedList{
         }
         let node = this.head;
         this.head = this.head.next;
+        node.next = null;
         
         return node.data;
     }
