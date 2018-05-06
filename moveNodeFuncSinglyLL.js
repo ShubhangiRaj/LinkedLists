@@ -22,7 +22,7 @@ class LinkedList{
     pop(){
         // no nodes in the list, i.e. no head
         if(!this.head){
-            return;
+            return null;
         }
         // only one node in the list, i.e. the head node
         if(this.head.next == null){

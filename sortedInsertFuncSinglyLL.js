@@ -18,12 +18,13 @@ class LinkedList{
         let newNode = new Node(data);
         if(!this.head){
             this.head = newNode;
+        } else {
+            let node = this.head;
+            while(node.next !== null){
+                node = node.next;
+            }
+            node.next = newNode;
         }
-        let node = this.head;
-        while(node.next !== null){
-            node = node.next;
-        }
-        node.next = newNode;
     }
     printList(){
         if(!this.head){
@@ -37,21 +38,23 @@ class LinkedList{
     }
     sortedInsert(data){
         let newNode = new Node(data);
-        if(!this.head){
+        if(this.head == null){
+            this.head = newNode;
+        }
+        else if(newNode.data < this.head.data){
             newNode.next = this.head;
             this.head = newNode;
         }
-        if(this.head.data >= data){
-            newNode.next = this.head;
-            this.head = newNode;
+        else{
+            let prev = null; 
+            let curr = this.head;
+            while(curr !== null && newNode.data >= curr.data){
+                prev = curr;
+                curr = curr.next;
+            }
+            prev.next = newNode;
+            newNode.next = curr;
         }
-        let currNode = this.head;
-        while(currNode.next !== null && currNode.next.data < data){
-            currNode = currNode.next;
-        }
-        newNode.next = currNode.next;
-        currNode.next = newNode;
-
         return this.head;
     }
 }

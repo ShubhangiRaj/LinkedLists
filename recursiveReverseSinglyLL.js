@@ -1,5 +1,5 @@
 // Problem Statement
-// Reverse a linked list by rearranging all .next pointers and head pointer. (Iterative)
+// Reverse a linked list by rearranging all .next pointers and head pointer. (Rescursive)
 
 class Node{
     constructor(data, next = null){
@@ -42,5 +42,8 @@ class LinkedList{
         }
         this.head = prev;
         return this.head;
+    }
+    recursiveReverse(){
+        
     }
 }
