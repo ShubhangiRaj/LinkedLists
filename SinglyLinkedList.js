@@ -4,6 +4,7 @@ class Node{
 		this.next = next
 	}
 }
+// class name LinkedList which is creating our LinkedList  
 class LinkedList{
     
     constructor(){
@@ -44,7 +45,7 @@ class LinkedList{
             node = node.next;
         }
     }
-
+// Function use to delete the linkedList 
     deleteList() {
         this.head = null;
     }
